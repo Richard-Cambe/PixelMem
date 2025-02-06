@@ -4,13 +4,15 @@ import {router, useRouter} from "expo-router";
 import {StatusBar} from "expo-status-bar";
 import * as Haptics from 'expo-haptics';
 
-const handlePress = (route) => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-    router.push(route);
-};
+
 
 const Homepage = () => {
     const router = useRouter()
+    const handlePress = (route) => {
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+        router.push(route);
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.logoContainer}>
@@ -33,7 +35,7 @@ const Homepage = () => {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.buttonAbout} onPress={() => handlePress('/about')}>
-                    <Text style={styles.linkText} href={"/about"}>REGLES</Text>
+                    <Text style={styles.linkText}>REGLES</Text>
                 </TouchableOpacity>
             </View>
             <StatusBar style="auto"/>

@@ -3,29 +3,40 @@ import {router} from "expo-router";
 import React from "react";
 import * as Haptics from 'expo-haptics';
 
-const handlePress = (route) => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-    router.push(route);
-};
 
 export default function EasyScreen() {
+    const handlePress = (route) => {
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+        router.push(route);
+    };
+
     return (
         <View style={styles.navbar}>
-            <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/easy')}>
-                <Text style={styles.buttonText}>2x2</Text>
-            </TouchableOpacity>
+            <View style={styles.container}>
+                <View style={styles.logoContainer}>
+                    <Image style={styles.Logo} source={require('../assets/src/PixelMem.png')}></Image>
+                </View>
 
-            <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/medium')}>
-                <Text style={styles.buttonText}>4x4</Text>
-            </TouchableOpacity>
+                <View style={styles.gameboard}></View>
 
-            <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/hard')}>
-                <Text style={styles.buttonText}>8x8</Text>
-            </TouchableOpacity>
+                <View style={styles.navbar}>
+                    <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/easy')}>
+                        <Text style={styles.buttonText}>2x2</Text>
+                    </TouchableOpacity>
 
-            <TouchableOpacity style={styles.buttonAbout} onPress={() => handlePress('/about')}>
-                <Text style={styles.linkText} href={"/about"}>REGLES</Text>
-            </TouchableOpacity>
+                    <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/medium')}>
+                        <Text style={styles.buttonText}>4x4</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/hard')}>
+                        <Text style={styles.buttonText}>8x8</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.buttonAbout} onPress={() => handlePress('/about')}>
+                        <Text style={styles.linkText} href={"/about"}>REGLES</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
         </View>
     )
 };
@@ -55,8 +66,6 @@ const styles = StyleSheet.create({
         borderColor: '#00bfff',
         width: '95%',
         height: '70%',
-        display: 'flex',
-        justifyContent: 'space-between',
     },
     navbar: {
         marginVertical: 25,
@@ -67,7 +76,7 @@ const styles = StyleSheet.create({
 
     },
     buttonHome: {
-        width: '30%',
+        width: '20%',
         height: 50,
         borderWidth: 3,
         borderColor: '#fff',
@@ -76,10 +85,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         fontWeight: 'bold',
-        fontSize: 25,
+        fontSize: 30,
+        textAlign: 'center',
     },
     buttonAbout: {
-        width: '30%',
+        width: '20%',
         height: 50,
         borderWidth: 3,
         borderColor: '#00bfff',
@@ -97,20 +107,5 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 15,
         color: '#00bfff',
-    },
-    rule1:{
-        width: 350,
-        height: 100,
-        resizeMode: 'contain',
-    },
-    rule2:{
-        width: 350,
-        height: 100,
-        resizeMode: 'contain',
-    },
-    rule3:{
-        width: 325,
-        height: 100,
-        resizeMode: 'contain',
     }
 });

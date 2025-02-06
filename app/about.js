@@ -1,16 +1,15 @@
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import {Link, router} from "expo-router";
+import {router} from "expo-router";
 import {StatusBar} from "expo-status-bar";
 import React from "react";
 import * as Haptics from 'expo-haptics';
 
-
-const handlePress = (route) => {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
-    router.push(route);
-};
-
 export default function AboutScreen() {
+    const handlePress = (route) => {
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+        router.push(route);
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.logoContainer}>
