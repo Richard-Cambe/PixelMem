@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity, Dimensions} from 'react-native';
 import {router} from "expo-router";
 import React from "react";
 import * as Haptics from 'expo-haptics';
@@ -20,8 +20,8 @@ export default function EasyScreen() {
                 <View style={styles.gameboard}></View>
 
                 <View style={styles.navbar}>
-                    <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/easy')}>
-                        <Text style={styles.buttonText}>2x2</Text>
+                    <TouchableOpacity style={styles.buttonHome2} onPress={() => handlePress('/')}>
+                        <Text style={styles.buttonText2}>ACCUEIL</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/medium')}>
@@ -47,6 +47,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#000000',
         alignItems: 'center',
         justifyContent: 'center',
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width,
     },
     logoContainer: {
         position: 'absolute',
@@ -88,6 +90,19 @@ const styles = StyleSheet.create({
         fontSize: 30,
         textAlign: 'center',
     },
+    buttonHome2: {
+        width: '20%',
+        height: 50,
+        borderWidth: 3,
+        borderColor: '#00bfff',
+        backgroundColor: '#fff',
+        borderRadius: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontWeight: 'bold',
+        fontSize: 30,
+        textAlign: 'center',
+    },
     buttonAbout: {
         width: '20%',
         height: 50,
@@ -97,11 +112,17 @@ const styles = StyleSheet.create({
         borderRadius: 40,
         justifyContent: 'center',
         alignItems: 'center',
+        color: '#00bfff'
     },
     buttonText: {
         fontWeight: 'bold',
         fontSize: 15,
         color: 'white',
+    },
+    buttonText2: {
+        fontWeight: 'bold',
+        fontSize: 15,
+        color: '#00bfff',
     },
     linkText: {
         fontWeight: 'bold',

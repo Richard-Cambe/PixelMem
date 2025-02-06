@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity, Dimensions} from 'react-native';
 import {router} from "expo-router";
 import {StatusBar} from "expo-status-bar";
 import React from "react";
@@ -39,6 +39,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#000000',
         alignItems: 'center',
         justifyContent: 'center',
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width,
     },
     logoContainer: {
         position: 'absolute',

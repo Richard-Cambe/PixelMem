@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity, Dimensions} from 'react-native';
 import {router} from "expo-router";
 import React from "react";
 import * as Haptics from 'expo-haptics';
@@ -27,8 +27,8 @@ export default function HardScreen() {
                         <Text style={styles.buttonText}>4x4</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/hard')}>
-                        <Text style={styles.buttonText}>8x8</Text>
+                    <TouchableOpacity style={styles.buttonHome2} onPress={() => handlePress('/')}>
+                        <Text style={styles.buttonText2}>ACCUEIL</Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.buttonAbout} onPress={() => handlePress('/about')}>
@@ -46,6 +46,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#000000',
         alignItems: 'center',
         justifyContent: 'center',
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width,
     },
     logoContainer: {
         position: 'absolute',
@@ -87,6 +89,20 @@ const styles = StyleSheet.create({
         fontSize: 30,
         textAlign: 'center',
     },
+    buttonHome2: {
+        width: '20%',
+        height: 50,
+        borderWidth: 3,
+        borderColor: '#00bfff',
+        backgroundColor: '#fff',
+        borderRadius: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontWeight: 'bold',
+        fontSize: 30,
+        textAlign: 'center',
+        color: '#00bfff'
+    },
     buttonAbout: {
         width: '20%',
         height: 50,
@@ -101,6 +117,11 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 15,
         color: 'white',
+    },
+    buttonText2: {
+        fontWeight: 'bold',
+        fontSize: 15,
+        color: '#00bfff',
     },
     linkText: {
         fontWeight: 'bold',

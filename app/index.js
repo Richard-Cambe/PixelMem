@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Dimensions, Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {router, useRouter} from "expo-router";
 import {StatusBar} from "expo-status-bar";
 import * as Haptics from 'expo-haptics';
@@ -49,6 +49,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#000000',
         alignItems: 'center',
         justifyContent: 'center',
+        height: Dimensions.get('window').height,
+        width: Dimensions.get('window').width,
     },
     logoContainer: {
         position: 'absolute',
