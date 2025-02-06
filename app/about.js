@@ -1,8 +1,14 @@
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import {Link} from "expo-router";
+import {Link, router} from "expo-router";
 import {StatusBar} from "expo-status-bar";
 import React from "react";
 import * as Haptics from 'expo-haptics';
+
+
+const handlePress = (route) => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+    router.push(route);
+};
 
 export default function AboutScreen() {
     return (
@@ -18,10 +24,8 @@ export default function AboutScreen() {
             </View>
 
             <View style={styles.navbar}>
-                <TouchableOpacity style={styles.buttonAbout} onPress={() => {
-                    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy).then(r => {} )
-                }}>
-                    <Link style={styles.linkText} href={"/"}>RETOUR</Link>
+                <TouchableOpacity style={styles.buttonAbout} onPress={() => handlePress('/')}>
+                    <Text style={styles.linkText}>RETOUR</Text>
                 </TouchableOpacity>
 
             </View>
