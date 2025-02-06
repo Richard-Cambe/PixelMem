@@ -21,7 +21,7 @@ export default function AboutScreen() {
                 <TouchableOpacity style={styles.buttonAbout} onPress={() => {
                     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy).then(r => {} )
                 }}>
-                    <Link style={styles.linkText} href={"/index"}>RETOUR</Link>
+                    <Link style={styles.linkText} href={"/"}>RETOUR</Link>
                 </TouchableOpacity>
 
             </View>
