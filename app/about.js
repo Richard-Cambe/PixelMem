@@ -26,7 +26,6 @@ export default function AboutScreen() {
                 <TouchableOpacity style={styles.buttonAbout} onPress={() => handlePress('/')}>
                     <Text style={styles.linkText}>RETOUR</Text>
                 </TouchableOpacity>
-
             </View>
             <StatusBar style="auto"/>
         </View>

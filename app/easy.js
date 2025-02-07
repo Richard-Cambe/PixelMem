@@ -1,41 +1,42 @@
 import {Text, View, StyleSheet, Image, TouchableOpacity, Dimensions} from 'react-native';
 import {router} from "expo-router";
-import React from "react";
+import React, {useState} from "react";
 import * as Haptics from 'expo-haptics';
 
-
 export default function EasyScreen() {
+
     const handlePress = (route) => {
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
         router.push(route);
     };
 
     return (
-        <View style={styles.navbar}>
-            <View style={styles.container}>
-                <View style={styles.logoContainer}>
-                    <Image style={styles.Logo} source={require('../assets/src/PixelMem.png')}></Image>
-                </View>
 
-                <View style={styles.gameboard}></View>
+        <View style={styles.container}>
+            <View style={styles.logoContainer}>
+                <Image style={styles.Logo} source={require('../assets/src/PixelMem.png')}></Image>
+            </View>
 
-                <View style={styles.navbar}>
-                    <TouchableOpacity style={styles.buttonHome2} onPress={() => handlePress('/')}>
-                        <Text style={styles.buttonText2}>ACCUEIL</Text>
-                    </TouchableOpacity>
+            <View style={styles.gameboard}>
 
-                    <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/medium')}>
-                        <Text style={styles.buttonText}>4x4</Text>
-                    </TouchableOpacity>
+            </View>
 
-                    <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/hard')}>
-                        <Text style={styles.buttonText}>8x8</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.buttonAbout} onPress={() => handlePress('/about')}>
-                        <Text style={styles.linkText} href={"/about"}>REGLES</Text>
-                    </TouchableOpacity>
-                </View>
+            <View style={styles.navbar}>
+                <TouchableOpacity style={styles.buttonfoto} onPress={() => handlePress('/photoset')}>
+                    <Text style={styles.buttonTextfoto}> FAUTO </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.buttonHome2} onPress={() => handlePress('/')}>
+                    <Text style={styles.buttonText2}>ACCUEIL</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/medium')}>
+                    <Text style={styles.buttonText}>4x4</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/hard')}>
+                    <Text style={styles.buttonText}>8x8</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.buttonAbout} onPress={() => handlePress('/about')}>
+                    <Text style={styles.linkText}>REGLES</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -68,6 +69,9 @@ const styles = StyleSheet.create({
         borderColor: '#00bfff',
         width: '95%',
         height: '70%',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
     navbar: {
         marginVertical: 25,
@@ -128,5 +132,22 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 15,
         color: '#00bfff',
-    }
+    },
+    buttonfoto: {
+        width: '20%',
+        height: 50,
+        borderWidth: 3,
+        borderColor: '#00bfff',
+        backgroundColor: '#fff',
+        borderRadius: 40,
+        justifyContent: 'center',
+        alignSelf: 'center',
+        alignItems: 'center',
+        color: '#00bfff'
+    },
+    buttonTextfoto: {
+        fontWeight: 'bold',
+        fontSize: 15,
+        color: '#00bfff',
+    },
 });

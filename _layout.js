@@ -8,6 +8,7 @@ export function RootLayout() {
             <Stack.Screen name="easy" options={{ title: 'Easy', headerShown: false }} />
             <Stack.Screen name="medium" options={{ title: 'Medium', headerShown: false }} />
             <Stack.Screen name="hard" options={{ title: 'Hard', headerShown: false }} />
+            <Stack.Screen name="photoset" options={{ title: 'Photoset', headerShown: false }} />
         </Stack>
     );
 }

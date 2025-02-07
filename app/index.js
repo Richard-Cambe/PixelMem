@@ -25,20 +25,16 @@ const Homepage = () => {
                 <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/easy')}>
                     <Text style={styles.buttonText}>2x2</Text>
                 </TouchableOpacity>
-
                 <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/medium')}>
                     <Text style={styles.buttonText}>4x4</Text>
                 </TouchableOpacity>
-
                 <TouchableOpacity style={styles.buttonHome} onPress={() => handlePress('/hard')}>
                     <Text style={styles.buttonText}>8x8</Text>
                 </TouchableOpacity>
-
                 <TouchableOpacity style={styles.buttonAbout} onPress={() => handlePress('/about')}>
                     <Text style={styles.linkText}>REGLES</Text>
                 </TouchableOpacity>
             </View>
-            <StatusBar style="auto"/>
         </View>
     );
 };
